@@ -1,0 +1,31 @@
+AUTHOR : HUGO GUTEKUNST
+NAME: ListingVideo
+RELEASE : 2.0
+LICENSE : GPLV3
+
+COMPATIBLE : works on Debian and ubuntu (tested) 
+
+NEEDS : 
+	FFMPEG paquet.
+	A MYSQL account and a database.
+
+DESCRIPTION :
+	With this software, you can realise an inventory of your film library and stoked it in a database.
+	Several information are got, like video and audio codec, the duration, the video contenair and other.
+	The syncronisation of the database can be plan with a simple cron.	
+
+UTILISATION : 
+	Get the program with the following command line on your shell.
+	cd /home/user && git clone https://github.com/wolf85kunst/listingvideo.git && cd listingvideo
+	
+	You have to complet "param.conf" file with your favorit text editor. With that, the database information.
+	Run the init DB script -> "bash setup_bdd.sh". This script will feed the database with the necessary tables.
+	Here we are. The DB is ready to get your video listing !
+	Run manualy the main script with the command "bash listingvideo.sh". It is possible to plan a resynchronyse with a cron. To do that, simply tap "crontab -e", and tap the following line '0 18 * * * /path_of_my_script/listingvideo.sh' in order to plan a sync all day at 6 pm.
+
+UPDATE
+	an web interface will be worked to edit, list and perfom some queries on the DB.
+	we are going to develop a system to get additionnal informations like synopsys, kind of the video, the jacket, etc.
+	debugging and add var control. we observed some crash of the application during the listing, on certain video file.
+	add possibility to automate the implementation of a cron to the db synchronisation.
+	You help is wellcome...

@@ -7,7 +7,7 @@ ARPROUVE : fonctionne sur Debian et Ubuntu.
 
 PREREQUIS : 
 	Le paquet FFMPEG.
-	Un acces a une base de donnees.
+	Un acces a une base de donnees MYSQL.
 
 DESCRIPTION :
 	Ce logiciel vous permet de realiser un inventaire de votre filmotheque et de le stocker dans une base de donnees.

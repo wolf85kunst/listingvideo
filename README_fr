@@ -19,8 +19,8 @@ UTILISATION :
 	cd /home/user && git clone https://github.com/wolf85kunst/listingvideo.git && cd listingvideo
 	veuillez a remplir les information utiles dans le fichier "param.conf" avec 'nano/vim param.conf', dont les informations d'authentification a la BDD.
 	lancez le script d'initialisation de la BDD -> 'bash setup_bdd.sh'. Ce script permet remplir la base de donnees avec les tables necessaires. La BDD est alors prete a recevoir le listing des videos de votre filmotheque.
-	Lancez manuellement le scrit principal pour initier le listing de vos films a l'aide de la commande 'bash listingvideo_v2.sh'. Il est possible de planifier une resyncronisation de votre repertoire de film par un cron.
-	Pour ce faire crontab -e. Choisissez votre editeur et tapez la ligne suivante '0 18 * * * /chemin_de_mon_script/listingvideo_v2.sh' pour planifier la syncro tous les jours a 18H.
+	Lancez manuellement le scrit principal pour initier le listing de vos films a l'aide de la commande 'bash listingvideo.sh'. Il est possible de planifier une resyncronisation de votre repertoire de film par un cron.
+	Pour ce faire crontab -e. Choisissez votre editeur et tapez la ligne suivante '0 18 * * * /chemin_de_mon_script/listingvideo.sh' pour planifier la syncro tous les jours a 18H.
 	
 MISE A JOUR : 
 	Une interface web sera developper pour editer, lister, et effectuer des requettes sur la BDD.

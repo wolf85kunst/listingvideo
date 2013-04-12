@@ -109,7 +109,7 @@ cpt_lost=`mysql $bdd_name --batch -u $bdd_user -h $bdd_host -p$bdd_password -N -
 
 # INSCRIPTION DE LA DATE DE LA DERNIERE SYNCRHO AVEC LA BDD
 if [ "$data" == 'bdd' ]; then
-	echo $date_format_bdd > ./last_synchro.info
+	echo $date_format_bdd > `dirname $0`/last_synchro.info
 fi
 
 # script time

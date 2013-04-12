@@ -14,7 +14,7 @@ DESCRIPTION :
 	Several information are got, like video and audio codec, the duration, the video contenair and other.
 	The syncronisation of the database can be plan with a simple cron.	
 
-UTILISATION : 
+USE : 
 	Get the program with the following command line on your shell.
 	cd /home/user && git clone https://github.com/wolf85kunst/listingvideo.git && cd listingvideo
 	
@@ -28,4 +28,4 @@ UPDATE
 	we are going to develop a system to get additionnal informations like synopsys, kind of the video, the jacket, etc.
 	debugging and add var control. we observed some crash of the application during the listing, on certain video file.
 	add possibility to automate the implementation of a cron to the db synchronisation.
-	You help is wellcome...
+	Your help is wellcome...

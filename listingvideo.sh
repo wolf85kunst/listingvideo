@@ -10,7 +10,7 @@ usefull_program()
 	verify=$1
 	if [ $verify -eq 1 ]; then
 		useful_program=(ffmpeg mysql-client-core-5.5)
-		if [ ! `dpkg -l |awk '{print $2}' | egrep "^${useful_program[0]}$"` ]; apt-get install -y ${useful_program[*]}; fi
+		if [ ! `dpkg -l |awk '{print $2}' | egrep "^${useful_program[0]}$"` ]; then apt-get install -y ${useful_program[*]}; fi
 	fi
 }
 

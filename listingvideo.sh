@@ -4,6 +4,7 @@
 start_script=`date +%s`
 
 source `dirname $0`/param.conf
+source `dirname $0`/regex.list
 
 usefull_program()
 {
@@ -37,14 +38,14 @@ get_info_video()
 {
 	video_path=`dirname "$line"`
         ffmpeg_result=`ffmpeg -i "$line" 2>&1 |sed -r "s/\t//g" |tr "\n$" "\ "`
-        resolution_video=`echo "$ffmpeg_result" |sed -E "s/.*Video:.*([0-9]{3,}x[0-9]{3,}).*/\\1/"`
+        resolution_video=`echo "$ffmpeg_result" |sed -nE "s/$regex__resolution_video/\\1/p"`
 	height=`echo $resolution_video | cut -d'x' -f1`
 	width=`echo $resolution_video | cut -d'x' -f2`        
-	duration_video=`echo "$ffmpeg_result" |sed -E "s/.*Duration: (([0-9]{2}:){2}[0-9]{2}).*/\\1/"`
-        codec_audio=`echo "$ffmpeg_result" |sed -E "s/.*Audio: ([a-zA-Z0-9]*).*/\\1/"`
-        codec_video=`echo "$ffmpeg_result" |sed -E "s/.*Video: ([a-zA-Z0-9]*).*/\\1/"`
-        container=`echo "$video_title" |sed -E "s/.*\.([0-9a-zA-Z]{,4})/\\1/"`
-        purename=`echo "$video_title" |sed -E "s/(.*)\.[a-zA-Z0-9]{,4}/\\1/"`
+	duration_video=`echo "$ffmpeg_result" |sed -nE "s/$regex__duration_video/\\1/p"`
+        codec_audio=`echo "$ffmpeg_result" |sed -nE "s/$regex__codec_audio/\\1/p"`
+        codec_video=`echo "$ffmpeg_result" |sed -nE "s/$regex__codec_video/\\1/p"`
+        container=`echo "$video_title" |sed -nE "s/$regex__contener/\\1/p"`
+        purename=`echo "$video_title" |sed -nE "s/$regex__purename/\\1/p"`
         clear_name "$purename"
 	get_secondes_duration "$duration_video"	
 	duration_video=$secondes

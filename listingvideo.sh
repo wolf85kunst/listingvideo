@@ -5,6 +5,15 @@ start_script=`date +%s`
 
 source `dirname $0`/param.conf
 
+usefull_program()
+{
+	verify=$1
+	if [ $verify -eq 1 ]; then
+		useful_program=(ffmpeg mysql-client-core-5.5)
+		if [ dpkg -l |awk '{print $2}' | egrep "^${useful_program[0]}$" ]; then echo 'installed'; else echo 'dont installed'; fi
+	fi
+}
+
 clear_name()
 {
         clearname=`echo "$1" |sed -E 's/[_.-]/\ /g' | tr '[[:upper:]]' '[[:lower:]]'` #Remplacer les majuscule par des minuscules
@@ -47,6 +56,11 @@ put_verbose_mode()
 		echo "[$cpt_find] -$1- $line"
 	fi
 }
+
+# MAIN PROGRAM =========================================================
+
+# test if the program are installed
+usefull_program 1
 
 cpt_find=0
 cpt_add=0

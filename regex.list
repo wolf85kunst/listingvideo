@@ -1,0 +1,6 @@
+regex__resolution_video=".*Video:.*([0-9]{3,}x[0-9]{3,}).*"
+regex__duration_video=".*Duration: (([0-9]{2}:){2}[0-9]{2}).*"
+regex__codec_audio=".*Audio: ([a-zA-Z0-9]*).*"
+regex__codec_video=".*Video: ([a-zA-Z0-9]*).*"
+regex__contener=".*\.([0-9a-zA-Z]{,4})"
+regex__purename="(.*)\.[a-zA-Z0-9]{,4}"

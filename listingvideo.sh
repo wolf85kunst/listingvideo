@@ -8,11 +8,8 @@ source `dirname $0`/regex.list
 
 usefull_program()
 {
-	verify=$1
-	if [ $verify -eq 1 ]; then
 		useful_program=(ffmpeg mysql-client-core-5.5)
-		if [ ! `dpkg -l |awk '{print $2}' | egrep "^${useful_program[0]}$"` ]; then apt-get install -y ${useful_program[*]}; fi
-	fi
+		apt-get install -y ${useful_program[@]}
 }
 
 clear_name()
@@ -60,8 +57,8 @@ put_verbose_mode()
 
 # MAIN PROGRAM =========================================================
 
-# test if the program are installed
-usefull_program 1
+# test if the programs are installed
+if [  "$verify_usefull_program" == 'enable' ]; then usefull_program; fi;
 
 cpt_test=0
 
@@ -97,7 +94,7 @@ do
 			get_info_video
 			mysql $bdd_name --batch -u $bdd_user -h $bdd_host -p$bdd_password -N -e \
 			"INSERT INTO filmotheque VALUES \
-			("","$line","$video_path","$video_title","$purename","-","$clearname","$codec_video","$codec_audio","$resolution_video","$duration_video","$width","$container","$date_format_bdd","$date_format_bdd","$md5sum",'NO','','-','0','-');"
+			('','$line','$video_path','$video_title','$purename','-','$clearname','$codec_video','$codec_audio','$resolution_video','$duration_video','$width','$container','$date_format_bdd','$date_format_bdd','$md5sum','NO','','-','0','-');"
 			if [ "$?" -ne 0 ]; then error_film[$cpt_test]="$line" && cpt_test=$(($cpt_test+1)); fi;
 			cpt_add=$(($cpt_add+1))
 			put_verbose_mode 'ADD BDD'

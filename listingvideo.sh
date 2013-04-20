@@ -115,7 +115,7 @@ do
 			get_info_video
 			mysql $bdd_name --batch -u $bdd_user -h $bdd_host -p$bdd_password -N -e \
 			"INSERT INTO filmotheque VALUES \
-			('','$line','$video_path','$video_title','$purename','-','$clearname','$codec_video','$codec_audio','$resolution_video','$duration_video','$width','$container','$date_format_bdd','$date_format_bdd','$md5sum','NO','','-','0','-');"
+			(\"\",\"$line\",\"$video_path\",\"$video_title\",\"$purename\",'-',\"$clearname\",\"$codec_video\",\"$codec_audio\",\"$resolution_video\",\"$duration_video\",\"$width\",\"$container\",\"$date_format_bdd\",\"$date_format_bdd\",\"$md5sum\",'NO','','-','0','-');"
 			if [ "$?" -ne 0 ]; then error_film[$cpt_test]="$line" && cpt_test=$(($cpt_test+1)); fi;
 			cpt_add=$(($cpt_add+1))
 			put_verbose_mode 'ADD BDD'

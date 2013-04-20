@@ -1,0 +1,1063 @@
+++ date +%s
++ start_script=1366420054
+++ dirname listingvideo.sh
++ source ./param.conf
+++ bdd_host=192.168.1.100
+++ bdd_name=filmo
+++ bdd_user=filmo
+++ bdd_password=filmo
+++ logfile=./events.log
++++ date '+%d.%m.%Y - %H:%M'
+++ date_format='20.04.2013 - 03:07'
+++ search_path=("/media/freebox")
+++ video_format='avi|mpg|mpeg|mkv|mka|mks|asf|wmv|mov|ogg|ogv|oga|ogx|3gp|3g2|webm|nut|flv|mp4'
+++ verbose_mode=1
+++ data=bdd
+++ filmo_file=/tmp/filmo.txt
+++ dirname listingvideo.sh
++ source ./regex.list
+++ regex__resolution_video='.*Video:.*([0-9]{3,}x[0-9]{3,}).*'
+++ regex__duration_video='.*Duration: (([0-9]{2}:){2}[0-9]{2}).*'
+++ regex__codec_audio='.*Audio: ([a-zA-Z0-9]*).*'
+++ regex__codec_video='.*Video: ([a-zA-Z0-9]*).*'
+++ regex__contener='.*\.([0-9a-zA-Z]{,4})'
+++ regex__purename='(.*)\.[a-zA-Z0-9]{,4}'
++ usefull_program 1
++ verify=1
++ '[' 1 -eq 1 ']'
++ useful_program=(ffmpeg mysql-client-core-5.5)
+++ dpkg -l
+++ egrep '^ffmpeg$'
++ '[' '!' ffmpeg ']'
++ cpt_find=0
++ cpt_add=0
++ cpt_update=0
++ cpt_lost=0
+++ date '+%Y-%m-%d %H:%M:%S'
++ date_format_bdd='2013-04-20 03:07:34'
++ read line
+++ find /media/freebox -type f -regextype posix-extended -iregex '.*\.(avi|mpg|mpeg|mkv|mka|mks|asf|wmv|mov|ogg|ogv|oga|ogx|3gp|3g2|webm|nut|flv|mp4)$'
++ cpt_find=1
+++ basename '/media/freebox/Disque dur/Téléchargements/The.Walking.Dead.S03.EP02.FRENCH.1080p.WEB-DL.H264-MiND.mkv'
++ video_title=The.Walking.Dead.S03.EP02.FRENCH.1080p.WEB-DL.H264-MiND.mkv
+++ ls -l '/media/freebox/Disque dur/Téléchargements/The.Walking.Dead.S03.EP02.FRENCH.1080p.WEB-DL.H264-MiND.mkv'
+++ awk '{print $5}'
++ weight=1624163280
+++ awk '{print $1}'
+++ md5sum
+++ echo The.Walking.Dead.S03.EP02.FRENCH.1080p.WEB-DL.H264-MiND.mkv.1624163280
++ md5sum=f0fbf6ede0817ac029d3027ee5eb4131
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''f0fbf6ede0817ac029d3027ee5eb4131'\'';'
++ md5sum_found=f0fbf6ede0817ac029d3027ee5eb4131
++ '[' -z f0fbf6ede0817ac029d3027ee5eb4131 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''f0fbf6ede0817ac029d3027ee5eb4131'\'';'
++ cpt_update=1
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[1] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/The.Walking.Dead.S03.EP02.FRENCH.1080p.WEB-DL.H264-MiND.mkv'
++ read line
++ cpt_find=2
+++ basename '/media/freebox/Disque dur/Téléchargements/LOTR/Le Hobbit - Journal de Production (making of) VOSTFR/Le Hobbit, la trilogie - Journal de Production (making of) VOSTFR.mp4'
++ video_title='Le Hobbit, la trilogie - Journal de Production (making of) VOSTFR.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/LOTR/Le Hobbit - Journal de Production (making of) VOSTFR/Le Hobbit, la trilogie - Journal de Production (making of) VOSTFR.mp4'
+++ awk '{print $5}'
++ weight=894790390
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Le Hobbit, la trilogie - Journal de Production (making of) VOSTFR.mp4.894790390'
++ md5sum=b91cfaf3d3fe102ab7470480c07c2d10
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''b91cfaf3d3fe102ab7470480c07c2d10'\'';'
++ md5sum_found=b91cfaf3d3fe102ab7470480c07c2d10
++ '[' -z b91cfaf3d3fe102ab7470480c07c2d10 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''b91cfaf3d3fe102ab7470480c07c2d10'\'';'
++ cpt_update=2
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[2] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/LOTR/Le Hobbit - Journal de Production (making of) VOSTFR/Le Hobbit, la trilogie - Journal de Production (making of) VOSTFR.mp4'
++ read line
++ cpt_find=3
+++ basename '/media/freebox/Disque dur/Téléchargements/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69.mkv'
++ video_title=Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69.mkv
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69.mkv'
+++ awk '{print $5}'
++ weight=1432606438
+++ echo Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69.mkv.1432606438
+++ md5sum
+++ awk '{print $1}'
++ md5sum=62ec4786e59a66e054df54fcdb977b83
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''62ec4786e59a66e054df54fcdb977b83'\'';'
++ md5sum_found=62ec4786e59a66e054df54fcdb977b83
++ '[' -z 62ec4786e59a66e054df54fcdb977b83 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''62ec4786e59a66e054df54fcdb977b83'\'';'
++ cpt_update=3
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[3] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69/Les.Mondes.De.Ralph.French.720p.Hdrip.X264.AC3-amour69.mkv'
++ read line
++ cpt_find=4
+++ basename '/media/freebox/Disque dur/Téléchargements/Le Hobbit Un Voyage Inattendu  _ The Hobbit An Unexpected Journey _ Mkv HD 720p Multi FR VFI _ VFF _  ENG AAC 5.1 Subs Fr Forc FR  ENG 1280X534 Sprlove.mkv'
++ video_title='Le Hobbit Un Voyage Inattendu  _ The Hobbit An Unexpected Journey _ Mkv HD 720p Multi FR VFI _ VFF _  ENG AAC 5.1 Subs Fr Forc FR  ENG 1280X534 Sprlove.mkv'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Le Hobbit Un Voyage Inattendu  _ The Hobbit An Unexpected Journey _ Mkv HD 720p Multi FR VFI _ VFF _  ENG AAC 5.1 Subs Fr Forc FR  ENG 1280X534 Sprlove.mkv'
+++ awk '{print $5}'
++ weight=2881495835
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Le Hobbit Un Voyage Inattendu  _ The Hobbit An Unexpected Journey _ Mkv HD 720p Multi FR VFI _ VFF _  ENG AAC 5.1 Subs Fr Forc FR  ENG 1280X534 Sprlove.mkv.2881495835'
++ md5sum=186346045dc07c1203845e6f93d1683d
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''186346045dc07c1203845e6f93d1683d'\'';'
++ md5sum_found=186346045dc07c1203845e6f93d1683d
++ '[' -z 186346045dc07c1203845e6f93d1683d ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''186346045dc07c1203845e6f93d1683d'\'';'
++ cpt_update=4
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[4] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Le Hobbit Un Voyage Inattendu  _ The Hobbit An Unexpected Journey _ Mkv HD 720p Multi FR VFI _ VFF _  ENG AAC 5.1 Subs Fr Forc FR  ENG 1280X534 Sprlove.mkv'
++ read line
++ cpt_find=5
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E12 - La Belle et la Bête - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E12 - La Belle et la Bête - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E12 - La Belle et la Bête - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=588879687
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E12 - La Belle et la Bête - FRENCH [ZKL 2012].mp4.588879687'
++ md5sum=32cb24fc19bcd87fdfa06044bb28c6d6
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''32cb24fc19bcd87fdfa06044bb28c6d6'\'';'
++ md5sum_found=32cb24fc19bcd87fdfa06044bb28c6d6
++ '[' -z 32cb24fc19bcd87fdfa06044bb28c6d6 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''32cb24fc19bcd87fdfa06044bb28c6d6'\'';'
++ cpt_update=5
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[5] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E12 - La Belle et la Bête - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=6
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E05 - La Petite Voix de la conscience - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E05 - La Petite Voix de la conscience - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E05 - La Petite Voix de la conscience - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589529225
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E05 - La Petite Voix de la conscience - FRENCH [ZKL 2012].mp4.589529225'
++ md5sum=a473a9c56d5cc42d2284300b5a95d6a8
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''a473a9c56d5cc42d2284300b5a95d6a8'\'';'
++ md5sum_found=a473a9c56d5cc42d2284300b5a95d6a8
++ '[' -z a473a9c56d5cc42d2284300b5a95d6a8 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''a473a9c56d5cc42d2284300b5a95d6a8'\'';'
++ cpt_update=6
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[6] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E05 - La Petite Voix de la conscience - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=7
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E08 - Le Ténébreux - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E08 - Le Ténébreux - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E08 - Le Ténébreux - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=592567834
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E08 - Le Ténébreux - FRENCH [ZKL 2012].mp4.592567834'
++ md5sum=62acd21e22d07b4c11e3a314a94af03f
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''62acd21e22d07b4c11e3a314a94af03f'\'';'
++ md5sum_found=62acd21e22d07b4c11e3a314a94af03f
++ '[' -z 62acd21e22d07b4c11e3a314a94af03f ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''62acd21e22d07b4c11e3a314a94af03f'\'';'
++ cpt_update=7
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[7] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E08 - Le Ténébreux - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=8
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E21 - La Pomme empoisonnée - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E21 - La Pomme empoisonnée - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E21 - La Pomme empoisonnée - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589069545
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E21 - La Pomme empoisonnée - FRENCH [ZKL 2012].mp4.589069545'
++ md5sum=0ceb82a5162a6f5576ba7ee3bd74b160
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''0ceb82a5162a6f5576ba7ee3bd74b160'\'';'
++ md5sum_found=0ceb82a5162a6f5576ba7ee3bd74b160
++ '[' -z 0ceb82a5162a6f5576ba7ee3bd74b160 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''0ceb82a5162a6f5576ba7ee3bd74b160'\'';'
++ cpt_update=8
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[8] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E21 - La Pomme empoisonnée - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=9
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E19 - Le Bon Fils - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E19 - Le Bon Fils - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E19 - Le Bon Fils - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589057572
+++ echo 'Once Upon A Time HD 720p x264 S01E19 - Le Bon Fils - FRENCH [ZKL 2012].mp4.589057572'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=1c9c5c862d391bd2d0eb8d8e73f370e9
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''1c9c5c862d391bd2d0eb8d8e73f370e9'\'';'
++ md5sum_found=1c9c5c862d391bd2d0eb8d8e73f370e9
++ '[' -z 1c9c5c862d391bd2d0eb8d8e73f370e9 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''1c9c5c862d391bd2d0eb8d8e73f370e9'\'';'
++ cpt_update=9
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[9] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E19 - Le Bon Fils - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=10
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E06 - Le Berger - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E06 - Le Berger - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E06 - Le Berger - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589434877
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E06 - Le Berger - FRENCH [ZKL 2012].mp4.589434877'
++ md5sum=bcca5982275ec55cadeeec072818ff78
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''bcca5982275ec55cadeeec072818ff78'\'';'
++ md5sum_found=bcca5982275ec55cadeeec072818ff78
++ '[' -z bcca5982275ec55cadeeec072818ff78 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''bcca5982275ec55cadeeec072818ff78'\'';'
++ cpt_update=10
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[10] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E06 - Le Berger - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=11
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E07 - Le Cœur du chasseur - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E07 - Le Cœur du chasseur - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E07 - Le Cœur du chasseur - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589828171
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E07 - Le Cœur du chasseur - FRENCH [ZKL 2012].mp4.589828171'
++ md5sum=9f8f721890aa24d3e46d9addae0a1ff7
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''9f8f721890aa24d3e46d9addae0a1ff7'\'';'
++ md5sum_found=9f8f721890aa24d3e46d9addae0a1ff7
++ '[' -z 9f8f721890aa24d3e46d9addae0a1ff7 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''9f8f721890aa24d3e46d9addae0a1ff7'\'';'
++ cpt_update=11
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[11] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E07 - Le Cœur du chasseur - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=12
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E22 - Le Véritable Amour - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E22 - Le Véritable Amour - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E22 - Le Véritable Amour - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=585986160
+++ echo 'Once Upon A Time HD 720p x264 S01E22 - Le Véritable Amour - FRENCH [ZKL 2012].mp4.585986160'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=42c80c12a9f91fe3e7162c83b6cac840
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''42c80c12a9f91fe3e7162c83b6cac840'\'';'
++ md5sum_found=42c80c12a9f91fe3e7162c83b6cac840
++ '[' -z 42c80c12a9f91fe3e7162c83b6cac840 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''42c80c12a9f91fe3e7162c83b6cac840'\'';'
++ cpt_update=12
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[12] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E22 - Le Véritable Amour - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=13
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E09 - Hansel et Gretel - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E09 - Hansel et Gretel - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E09 - Hansel et Gretel - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589495186
+++ echo 'Once Upon A Time HD 720p x264 S01E09 - Hansel et Gretel - FRENCH [ZKL 2012].mp4.589495186'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=06f1e8eeda79acd4db76b773c2d1c350
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''06f1e8eeda79acd4db76b773c2d1c350'\'';'
++ md5sum_found=06f1e8eeda79acd4db76b773c2d1c350
++ '[' -z 06f1e8eeda79acd4db76b773c2d1c350 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''06f1e8eeda79acd4db76b773c2d1c350'\'';'
++ cpt_update=13
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[13] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E09 - Hansel et Gretel - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=14
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E01 - Il était une fois - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E01 - Il était une fois - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E01 - Il était une fois - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=597560254
+++ echo 'Once Upon A Time HD 720p x264 S01E01 - Il était une fois - FRENCH [ZKL 2012].mp4.597560254'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=c200c781a461622dd232a891ccc7512e
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''c200c781a461622dd232a891ccc7512e'\'';'
++ md5sum_found=c200c781a461622dd232a891ccc7512e
++ '[' -z c200c781a461622dd232a891ccc7512e ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''c200c781a461622dd232a891ccc7512e'\'';'
++ cpt_update=14
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[14] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E01 - Il était une fois - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=15
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E02 - Le Sort noir - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E02 - Le Sort noir - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E02 - Le Sort noir - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=583982336
+++ echo 'Once Upon A Time HD 720p x264 S01E02 - Le Sort noir - FRENCH [ZKL 2012].mp4.583982336'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=735ecfb8bb8fe47323bfa4b028fbb8c8
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''735ecfb8bb8fe47323bfa4b028fbb8c8'\'';'
++ md5sum_found=735ecfb8bb8fe47323bfa4b028fbb8c8
++ '[' -z 735ecfb8bb8fe47323bfa4b028fbb8c8 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''735ecfb8bb8fe47323bfa4b028fbb8c8'\'';'
++ cpt_update=15
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[15] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E02 - Le Sort noir - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=16
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E20 - La Promesse de Pinocchio - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E20 - La Promesse de Pinocchio - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E20 - La Promesse de Pinocchio - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589053959
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E20 - La Promesse de Pinocchio - FRENCH [ZKL 2012].mp4.589053959'
++ md5sum=b5130e9b2c3fd0a8d9851c06ada6e33a
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''b5130e9b2c3fd0a8d9851c06ada6e33a'\'';'
++ md5sum_found=b5130e9b2c3fd0a8d9851c06ada6e33a
++ '[' -z b5130e9b2c3fd0a8d9851c06ada6e33a ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''b5130e9b2c3fd0a8d9851c06ada6e33a'\'';'
++ cpt_update=16
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[16] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E20 - La Promesse de Pinocchio - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=17
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E18 - Daniel - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E18 - Daniel - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E18 - Daniel - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589512494
+++ awk '{print $1}'
+++ md5sum
++ md5sum=b47ce282b56f1d3d267ddf3fe02ec8e0
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''b47ce282b56f1d3d267ddf3fe02ec8e0'\'';'
++ md5sum_found=b47ce282b56f1d3d267ddf3fe02ec8e0
++ '[' -z b47ce282b56f1d3d267ddf3fe02ec8e0 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''b47ce282b56f1d3d267ddf3fe02ec8e0'\'';'
++ cpt_update=17
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[17] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E18 - Daniel - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=18
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E16 - Le Chemin des ténèbres - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E16 - Le Chemin des ténèbres - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E16 - Le Chemin des ténèbres - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=587536713
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E16 - Le Chemin des ténèbres - FRENCH [ZKL 2012].mp4.587536713'
++ md5sum=6f34f0cb6a018333c4848cf6d94076ba
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''6f34f0cb6a018333c4848cf6d94076ba'\'';'
++ md5sum_found=6f34f0cb6a018333c4848cf6d94076ba
++ '[' -z 6f34f0cb6a018333c4848cf6d94076ba ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''6f34f0cb6a018333c4848cf6d94076ba'\'';'
++ cpt_update=18
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[18] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E16 - Le Chemin des ténèbres - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=19
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E03 - Le Pont des Trolls - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E03 - Le Pont des Trolls - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E03 - Le Pont des Trolls - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=590864188
+++ echo 'Once Upon A Time HD 720p x264 S01E03 - Le Pont des Trolls - FRENCH [ZKL 2012].mp4.590864188'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=73a0a3e6734ba669c7ceb9b623c83a84
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''73a0a3e6734ba669c7ceb9b623c83a84'\'';'
++ md5sum_found=73a0a3e6734ba669c7ceb9b623c83a84
++ '[' -z 73a0a3e6734ba669c7ceb9b623c83a84 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''73a0a3e6734ba669c7ceb9b623c83a84'\'';'
++ cpt_update=19
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[19] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E03 - Le Pont des Trolls - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=20
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E10 - Le Vol de la colombe - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E10 - Le Vol de la colombe - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E10 - Le Vol de la colombe - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589666325
+++ echo 'Once Upon A Time HD 720p x264 S01E10 - Le Vol de la colombe - FRENCH [ZKL 2012].mp4.589666325'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=acd4dd88c6e181b11ce4964d22fb5343
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''acd4dd88c6e181b11ce4964d22fb5343'\'';'
++ md5sum_found=acd4dd88c6e181b11ce4964d22fb5343
++ '[' -z acd4dd88c6e181b11ce4964d22fb5343 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''acd4dd88c6e181b11ce4964d22fb5343'\'';'
++ cpt_update=20
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[20] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E10 - Le Vol de la colombe - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=21
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E15 - Le Grand Méchant Loup - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E15 - Le Grand Méchant Loup - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E15 - Le Grand Méchant Loup - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589303378
+++ echo 'Once Upon A Time HD 720p x264 S01E15 - Le Grand Méchant Loup - FRENCH [ZKL 2012].mp4.589303378'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=f6a2b65daa3d3b4dcd39aef4f96e41a4
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''f6a2b65daa3d3b4dcd39aef4f96e41a4'\'';'
++ md5sum_found=f6a2b65daa3d3b4dcd39aef4f96e41a4
++ '[' -z f6a2b65daa3d3b4dcd39aef4f96e41a4 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''f6a2b65daa3d3b4dcd39aef4f96e41a4'\'';'
++ cpt_update=21
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[21] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E15 - Le Grand Méchant Loup - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=22
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589232716
+++ echo 'Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4.589232716'
++ md5sum=6b6ba69e8a6f1201c8f004bc2ba7ece9
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''6b6ba69e8a6f1201c8f004bc2ba7ece9'\'';'
++ md5sum_found=
++ '[' -z '' ']'
++ get_info_video
+++ dirname '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
++ video_path='/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]'
+++ ffmpeg -i '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
+++ tr '\n$' '\ '
+++ sed -r 's/\t//g'
++ ffmpeg_result='ffmpeg version 0.8.5-6:0.8.5-0ubuntu0.12.10.1, Copyright (c) 2000-2012 the Libav developers   built on Jan 24 2013 14:49:20 with gcc 4.7.2 *** THIS PROGRAM IS DEPRECATED *** This program is only provided for compatibility and will be removed in a future release. Please use avconv instead. Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '\''/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'\'':   Metadata:     major_brand     : isom     minor_version   : 512     compatible_brands: isomiso2avc1mp41     creation_time   : 2012-09-20 17:03:29     title           : Once.Upon.A.Time.S01E13.FRENCH.720p.BluRay.x264-MiND     encoder         : Lavf54.32.100   Duration: 00:41:19.52, start: 0.000000, bitrate: 1901 kb/s     Chapter #0.0: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.1: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.2: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.3: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.4: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.5: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.6: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.7: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Chapter #0.8: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.9: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.10: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.11: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.12: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.13: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.14: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.15: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 1799 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc     Metadata:       creation_time   : 2012-09-20 17:03:29     Stream #0.1(fra): Audio: aac, 48000 Hz, stereo, s16, 95 kb/s     Metadata:       creation_time   : 2012-09-20 17:03:29 At least one output file must be specified '
+++ echo 'ffmpeg version 0.8.5-6:0.8.5-0ubuntu0.12.10.1, Copyright (c) 2000-2012 the Libav developers   built on Jan 24 2013 14:49:20 with gcc 4.7.2 *** THIS PROGRAM IS DEPRECATED *** This program is only provided for compatibility and will be removed in a future release. Please use avconv instead. Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '\''/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'\'':   Metadata:     major_brand     : isom     minor_version   : 512     compatible_brands: isomiso2avc1mp41     creation_time   : 2012-09-20 17:03:29     title           : Once.Upon.A.Time.S01E13.FRENCH.720p.BluRay.x264-MiND     encoder         : Lavf54.32.100   Duration: 00:41:19.52, start: 0.000000, bitrate: 1901 kb/s     Chapter #0.0: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.1: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.2: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.3: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.4: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.5: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.6: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.7: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Chapter #0.8: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.9: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.10: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.11: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.12: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.13: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.14: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.15: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 1799 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc     Metadata:       creation_time   : 2012-09-20 17:03:29     Stream #0.1(fra): Audio: aac, 48000 Hz, stereo, s16, 95 kb/s     Metadata:       creation_time   : 2012-09-20 17:03:29 At least one output file must be specified '
++ resolution_video=280x720
+++ echo 280x720
+++ cut -dx -f1
++ height=280
+++ echo 280x720
+++ cut -dx -f2
++ width=720
+++ sed -nE 's/.*Duration: (([0-9]{2}:){2}[0-9]{2}).*/\1/p'
+++ echo 'ffmpeg version 0.8.5-6:0.8.5-0ubuntu0.12.10.1, Copyright (c) 2000-2012 the Libav developers   built on Jan 24 2013 14:49:20 with gcc 4.7.2 *** THIS PROGRAM IS DEPRECATED *** This program is only provided for compatibility and will be removed in a future release. Please use avconv instead. Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '\''/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'\'':   Metadata:     major_brand     : isom     minor_version   : 512     compatible_brands: isomiso2avc1mp41     creation_time   : 2012-09-20 17:03:29     title           : Once.Upon.A.Time.S01E13.FRENCH.720p.BluRay.x264-MiND     encoder         : Lavf54.32.100   Duration: 00:41:19.52, start: 0.000000, bitrate: 1901 kb/s     Chapter #0.0: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.1: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.2: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.3: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.4: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.5: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.6: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.7: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Chapter #0.8: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.9: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.10: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.11: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.12: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.13: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.14: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.15: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 1799 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc     Metadata:       creation_time   : 2012-09-20 17:03:29     Stream #0.1(fra): Audio: aac, 48000 Hz, stereo, s16, 95 kb/s     Metadata:       creation_time   : 2012-09-20 17:03:29 At least one output file must be specified '
++ duration_video=00:41:19
+++ echo 'ffmpeg version 0.8.5-6:0.8.5-0ubuntu0.12.10.1, Copyright (c) 2000-2012 the Libav developers   built on Jan 24 2013 14:49:20 with gcc 4.7.2 *** THIS PROGRAM IS DEPRECATED *** This program is only provided for compatibility and will be removed in a future release. Please use avconv instead. Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '\''/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'\'':   Metadata:     major_brand     : isom     minor_version   : 512     compatible_brands: isomiso2avc1mp41     creation_time   : 2012-09-20 17:03:29     title           : Once.Upon.A.Time.S01E13.FRENCH.720p.BluRay.x264-MiND     encoder         : Lavf54.32.100   Duration: 00:41:19.52, start: 0.000000, bitrate: 1901 kb/s     Chapter #0.0: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.1: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.2: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.3: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.4: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.5: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.6: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.7: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Chapter #0.8: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.9: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.10: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.11: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.12: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.13: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.14: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.15: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 1799 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc     Metadata:       creation_time   : 2012-09-20 17:03:29     Stream #0.1(fra): Audio: aac, 48000 Hz, stereo, s16, 95 kb/s     Metadata:       creation_time   : 2012-09-20 17:03:29 At least one output file must be specified '
++ codec_audio=aac
+++ sed -nE 's/.*Video: ([a-zA-Z0-9]*).*/\1/p'
+++ echo 'ffmpeg version 0.8.5-6:0.8.5-0ubuntu0.12.10.1, Copyright (c) 2000-2012 the Libav developers   built on Jan 24 2013 14:49:20 with gcc 4.7.2 *** THIS PROGRAM IS DEPRECATED *** This program is only provided for compatibility and will be removed in a future release. Please use avconv instead. Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '\''/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'\'':   Metadata:     major_brand     : isom     minor_version   : 512     compatible_brands: isomiso2avc1mp41     creation_time   : 2012-09-20 17:03:29     title           : Once.Upon.A.Time.S01E13.FRENCH.720p.BluRay.x264-MiND     encoder         : Lavf54.32.100   Duration: 00:41:19.52, start: 0.000000, bitrate: 1901 kb/s     Chapter #0.0: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.1: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.2: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.3: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.4: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.5: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.6: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.7: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Chapter #0.8: start 0.000000, end 28.654000     Metadata:       title           : 00:00:00.000     Chapter #0.9: start 28.654000, end 384.676000     Metadata:       title           : 00:00:28.654     Chapter #0.10: start 384.676000, end 904.862000     Metadata:       title           : 00:06:24.676     Chapter #0.11: start 904.862000, end 1305.513000     Metadata:       title           : 00:15:04.862     Chapter #0.12: start 1305.513000, end 1874.498000     Metadata:       title           : 00:21:45.513     Chapter #0.13: start 1874.498000, end 2257.130000     Metadata:       title           : 00:31:14.498     Chapter #0.14: start 2257.130000, end 2479.520000     Metadata:       title           : 00:37:37.130     Chapter #0.15: start 2546.878000, end 2479.520000     Metadata:       title           : 00:42:26.878     Stream #0.0(eng): Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 1799 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc     Metadata:       creation_time   : 2012-09-20 17:03:29     Stream #0.1(fra): Audio: aac, 48000 Hz, stereo, s16, 95 kb/s     Metadata:       creation_time   : 2012-09-20 17:03:29 At least one output file must be specified '
++ codec_video=h264
+++ echo 'Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
+++ sed -nE 's/.*\.([0-9a-zA-Z]{,4})/\1/p'
++ container=mp4
+++ echo 'Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
+++ sed -nE 's/(.*)\.[a-zA-Z0-9]{,4}/\1/p'
++ purename='Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012]'
++ clear_name 'Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012]'
+++ echo 'Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012]'
+++ tr '[[:upper:]]' '[[:lower:]]'
+++ sed -E 's/[_.-]/\ /g'
++ clearname='once upon a time hd 720p x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ echo 'once upon a time hd 720p x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ sed -E 's/(720|720p|1080|1080p|#)//g'
++ clearname='once upon a time hd  x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ echo 'once upon a time hd  x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ sed -E 's/\(.*\)//g'
++ clearname='once upon a time hd  x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ echo 'once upon a time hd  x264 s01e13   le chevalier d'\''or   french [zkl 2012]'
+++ sed 's/\ \ */\ /g'
++ clearname='once upon a time hd x264 s01e13 le chevalier d'\''or french [zkl 2012]'
++ get_secondes_duration 00:41:19
+++ echo 00:41:19
+++ sed -E 's/^0//'
+++ cut -d: -f1
++ hours=0
+++ echo 00:41:19
+++ cut -d: -f2
+++ sed -E 's/^0//'
++ minutes=41
+++ sed -E 's/^0//'
+++ cut -d: -f3
++ secondes=19
++ hours=0
++ minutes=2460
++ secondes=2479
++ duration_video=2479
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'INSERT INTO filmotheque VALUES 			(,/media/freebox/Disque' $'dur/T\303\251l\303\251chargements/Once' Upon A Time Saison 1 FRENCH HD 720p x264 '[ZKL' '2012]/Once' Upon A Time HD 720p x264 S01E13 - Le Chevalier 'd'\''or' - FRENCH '[ZKL' '2012].mp4,/media/freebox/Disque' $'dur/T\303\251l\303\251chargements/Once' Upon A Time Saison 1 FRENCH HD 720p x264 '[ZKL' '2012],Once' Upon A Time HD 720p x264 S01E13 - Le Chevalier 'd'\''or' - FRENCH '[ZKL' '2012].mp4,Once' Upon A Time HD 720p x264 S01E13 - Le Chevalier 'd'\''or' - FRENCH '[ZKL' '2012],-,once' upon a time hd x264 s01e13 le chevalier 'd'\''or' french '[zkl' '2012],h264,aac,280x720,2479,720,mp4,2013-04-20' 03:07:34,2013-04-20 '03:07:34,6b6ba69e8a6f1201c8f004bc2ba7ece9,'\''NO'\'','\'''\'','\''-'\'','\''0'\'','\''-'\'');'
++ cpt_add=1
++ put_verbose_mode 'ADD BDD'
++ '[' 1 -eq 1 ']'
++ echo '[22] -ADD BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E13 - Le Chevalier d'\''or - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=23
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E17 - Le Chapelier fou - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E17 - Le Chapelier fou - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E17 - Le Chapelier fou - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=589087453
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E17 - Le Chapelier fou - FRENCH [ZKL 2012].mp4.589087453'
++ md5sum=88716622b8cdd67e29dc8bdd4b3fe914
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''88716622b8cdd67e29dc8bdd4b3fe914'\'';'
++ md5sum_found=88716622b8cdd67e29dc8bdd4b3fe914
++ '[' -z 88716622b8cdd67e29dc8bdd4b3fe914 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''88716622b8cdd67e29dc8bdd4b3fe914'\'';'
++ cpt_update=22
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[23] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E17 - Le Chapelier fou - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=24
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E11 - Le Génie - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E11 - Le Génie - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E11 - Le Génie - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=588091497
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E11 - Le Génie - FRENCH [ZKL 2012].mp4.588091497'
++ md5sum=e93ec63fd3bbed495df9629fff793a27
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''e93ec63fd3bbed495df9629fff793a27'\'';'
++ md5sum_found=e93ec63fd3bbed495df9629fff793a27
++ '[' -z e93ec63fd3bbed495df9629fff793a27 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''e93ec63fd3bbed495df9629fff793a27'\'';'
++ cpt_update=23
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[24] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E11 - Le Génie - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=25
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E14 - Nova et Rêveur - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E14 - Nova et Rêveur - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E14 - Nova et Rêveur - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=588694105
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E14 - Nova et Rêveur - FRENCH [ZKL 2012].mp4.588694105'
++ md5sum=c58bbc396686be9b016a8a3063b27eeb
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''c58bbc396686be9b016a8a3063b27eeb'\'';'
++ md5sum_found=c58bbc396686be9b016a8a3063b27eeb
++ '[' -z c58bbc396686be9b016a8a3063b27eeb ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''c58bbc396686be9b016a8a3063b27eeb'\'';'
++ cpt_update=24
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[25] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E14 - Nova et Rêveur - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=26
+++ basename '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E04 - Le Prix à payer - FRENCH [ZKL 2012].mp4'
++ video_title='Once Upon A Time HD 720p x264 S01E04 - Le Prix à payer - FRENCH [ZKL 2012].mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E04 - Le Prix à payer - FRENCH [ZKL 2012].mp4'
+++ awk '{print $5}'
++ weight=587673097
+++ awk '{print $1}'
+++ md5sum
+++ echo 'Once Upon A Time HD 720p x264 S01E04 - Le Prix à payer - FRENCH [ZKL 2012].mp4.587673097'
++ md5sum=9d602861cd0306dff75faa2c11f2b858
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''9d602861cd0306dff75faa2c11f2b858'\'';'
++ md5sum_found=9d602861cd0306dff75faa2c11f2b858
++ '[' -z 9d602861cd0306dff75faa2c11f2b858 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''9d602861cd0306dff75faa2c11f2b858'\'';'
++ cpt_update=25
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[26] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Once Upon A Time Saison 1 FRENCH HD 720p x264 [ZKL 2012]/Once Upon A Time HD 720p x264 S01E04 - Le Prix à payer - FRENCH [ZKL 2012].mp4'
++ read line
++ cpt_find=27
+++ basename '/media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E02.Where.s.My.Crown.TVRiP.XViD.avi'
++ video_title=Angry.Birds.Toons.E02.Where.s.My.Crown.TVRiP.XViD.avi
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E02.Where.s.My.Crown.TVRiP.XViD.avi'
+++ awk '{print $5}'
++ weight=36831232
+++ awk '{print $1}'
+++ md5sum
+++ echo Angry.Birds.Toons.E02.Where.s.My.Crown.TVRiP.XViD.avi.36831232
++ md5sum=db23c94d7a641e2898e56d0b4dfc0c6a
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''db23c94d7a641e2898e56d0b4dfc0c6a'\'';'
++ md5sum_found=db23c94d7a641e2898e56d0b4dfc0c6a
++ '[' -z db23c94d7a641e2898e56d0b4dfc0c6a ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''db23c94d7a641e2898e56d0b4dfc0c6a'\'';'
++ cpt_update=26
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[27] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E02.Where.s.My.Crown.TVRiP.XViD.avi'
++ read line
++ cpt_find=28
+++ basename '/media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E01.Chuck.Time.TVRiP.XViD.avi'
++ video_title=Angry.Birds.Toons.E01.Chuck.Time.TVRiP.XViD.avi
+++ ls -l '/media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E01.Chuck.Time.TVRiP.XViD.avi'
+++ awk '{print $5}'
++ weight=36777984
+++ echo Angry.Birds.Toons.E01.Chuck.Time.TVRiP.XViD.avi.36777984
+++ awk '{print $1}'
+++ md5sum
++ md5sum=9823c6373f8fbeb5383a00454d054141
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''9823c6373f8fbeb5383a00454d054141'\'';'
++ md5sum_found=9823c6373f8fbeb5383a00454d054141
++ '[' -z 9823c6373f8fbeb5383a00454d054141 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''9823c6373f8fbeb5383a00454d054141'\'';'
++ cpt_update=27
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[28] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/Angry Birds/Angry.Birds.Toons.E01.Chuck.Time.TVRiP.XViD.avi'
++ read line
++ cpt_find=29
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.20.Astrobiologie.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.20.Astrobiologie.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.20.Astrobiologie.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=442887590
+++ echo 'L Univers.et.ses.Mysteres.20.Astrobiologie.720p.x264.ac3.mp4.442887590'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=ed45ce5da9b26f1228760cba4111b456
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''ed45ce5da9b26f1228760cba4111b456'\'';'
++ md5sum_found=ed45ce5da9b26f1228760cba4111b456
++ '[' -z ed45ce5da9b26f1228760cba4111b456 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''ed45ce5da9b26f1228760cba4111b456'\'';'
++ cpt_update=28
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[29] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.20.Astrobiologie.720p.x264.ac3.mp4'
++ read line
++ cpt_find=30
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L univers.et.ses.Mysteres.09.Galaxies.720p.x264.ac3.mp4'
++ video_title='L univers.et.ses.Mysteres.09.Galaxies.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L univers.et.ses.Mysteres.09.Galaxies.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=376587170
+++ echo 'L univers.et.ses.Mysteres.09.Galaxies.720p.x264.ac3.mp4.376587170'
++ md5sum=4c467a273c632fe369f16d8a4b0a2713
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''4c467a273c632fe369f16d8a4b0a2713'\'';'
++ md5sum_found=4c467a273c632fe369f16d8a4b0a2713
++ '[' -z 4c467a273c632fe369f16d8a4b0a2713 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''4c467a273c632fe369f16d8a4b0a2713'\'';'
++ cpt_update=29
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[30] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L univers.et.ses.Mysteres.09.Galaxies.720p.x264.ac3.mp4'
++ read line
++ cpt_find=31
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.31.Apocalypse.cosmique.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.31.Apocalypse.cosmique.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.31.Apocalypse.cosmique.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=525326945
+++ echo 'L Univers.et.ses.Mysteres.31.Apocalypse.cosmique.720p.x264.ac3.mp4.525326945'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=f431c7341b495636deebe78165e0055e
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''f431c7341b495636deebe78165e0055e'\'';'
++ md5sum_found=f431c7341b495636deebe78165e0055e
++ '[' -z f431c7341b495636deebe78165e0055e ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''f431c7341b495636deebe78165e0055e'\'';'
++ cpt_update=30
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[31] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.31.Apocalypse.cosmique.720p.x264.ac3.mp4'
++ read line
++ cpt_find=32
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.34.Les.univers.paralleles.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.34.Les.univers.paralleles.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.34.Les.univers.paralleles.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=602495485
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.34.Les.univers.paralleles.720p.x264.ac3.mp4.602495485'
++ md5sum=20216f0fb6e33f2c9241d2fd3bbc6c4b
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''20216f0fb6e33f2c9241d2fd3bbc6c4b'\'';'
++ md5sum_found=20216f0fb6e33f2c9241d2fd3bbc6c4b
++ '[' -z 20216f0fb6e33f2c9241d2fd3bbc6c4b ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''20216f0fb6e33f2c9241d2fd3bbc6c4b'\'';'
++ cpt_update=31
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[32] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.34.Les.univers.paralleles.720p.x264.ac3.mp4'
++ read line
++ cpt_find=33
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.26.Coloniser.l espace.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.26.Coloniser.l espace.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.26.Coloniser.l espace.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=418130231
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.26.Coloniser.l espace.720p.x264.ac3.mp4.418130231'
++ md5sum=bad426dfb6b294113d58ecb728243333
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''bad426dfb6b294113d58ecb728243333'\'';'
++ md5sum_found=bad426dfb6b294113d58ecb728243333
++ '[' -z bad426dfb6b294113d58ecb728243333 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''bad426dfb6b294113d58ecb728243333'\'';'
++ cpt_update=32
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[33] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.26.Coloniser.l espace.720p.x264.ac3.mp4'
++ read line
++ cpt_find=34
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.33.Catastrophes.dans.l espace.lointain.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.33.Catastrophes.dans.l espace.lointain.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.33.Catastrophes.dans.l espace.lointain.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=557330254
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.33.Catastrophes.dans.l espace.lointain.720p.x264.ac3.mp4.557330254'
++ md5sum=a82094709ea81983072d08a826b54145
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''a82094709ea81983072d08a826b54145'\'';'
++ md5sum_found=a82094709ea81983072d08a826b54145
++ '[' -z a82094709ea81983072d08a826b54145 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''a82094709ea81983072d08a826b54145'\'';'
++ cpt_update=33
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[34] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.33.Catastrophes.dans.l espace.lointain.720p.x264.ac3.mp4'
++ read line
++ cpt_find=35
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.02.Mars-la.planete.rouge.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.02.Mars-la.planete.rouge.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.02.Mars-la.planete.rouge.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=536464329
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.02.Mars-la.planete.rouge.720p.x264.ac3.mp4.536464329'
++ md5sum=5c23acaf69d5e37a4e91d9b076ac3d98
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''5c23acaf69d5e37a4e91d9b076ac3d98'\'';'
++ md5sum_found=5c23acaf69d5e37a4e91d9b076ac3d98
++ '[' -z 5c23acaf69d5e37a4e91d9b076ac3d98 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''5c23acaf69d5e37a4e91d9b076ac3d98'\'';'
++ cpt_update=34
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[35] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.02.Mars-la.planete.rouge.720p.x264.ac3.mp4'
++ read line
++ cpt_find=36
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.30.La.gravitation.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.30.La.gravitation.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.30.La.gravitation.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=450944155
+++ echo 'L Univers.et.ses.Mysteres.30.La.gravitation.720p.x264.ac3.mp4.450944155'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=795faa3fb24400f6aae6572bbf04b327
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''795faa3fb24400f6aae6572bbf04b327'\'';'
++ md5sum_found=795faa3fb24400f6aae6572bbf04b327
++ '[' -z 795faa3fb24400f6aae6572bbf04b327 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''795faa3fb24400f6aae6572bbf04b327'\'';'
++ cpt_update=35
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[36] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.30.La.gravitation.720p.x264.ac3.mp4'
++ read line
++ cpt_find=37
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.29.Les.objets.monstrueux.de.l Univers.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.29.Les.objets.monstrueux.de.l Univers.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.29.Les.objets.monstrueux.de.l Univers.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=445285222
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.29.Les.objets.monstrueux.de.l Univers.720p.x264.ac3.mp4.445285222'
++ md5sum=e8254385ac22f0d04b4c007627caa2ec
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''e8254385ac22f0d04b4c007627caa2ec'\'';'
++ md5sum_found=e8254385ac22f0d04b4c007627caa2ec
++ '[' -z e8254385ac22f0d04b4c007627caa2ec ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''e8254385ac22f0d04b4c007627caa2ec'\'';'
++ cpt_update=36
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[37] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.29.Les.objets.monstrueux.de.l Univers.720p.x264.ac3.mp4'
++ read line
++ cpt_find=38
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.42.Une.autre.Terre.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.42.Une.autre.Terre.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.42.Une.autre.Terre.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=387051209
+++ echo 'L Univers.et.ses.Mysteres.42.Une.autre.Terre.720p.x264.ac3.mp4.387051209'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=e1c2f5e94c1318cca52cf9d52e6f902e
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''e1c2f5e94c1318cca52cf9d52e6f902e'\'';'
++ md5sum_found=e1c2f5e94c1318cca52cf9d52e6f902e
++ '[' -z e1c2f5e94c1318cca52cf9d52e6f902e ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''e1c2f5e94c1318cca52cf9d52e6f902e'\'';'
++ cpt_update=37
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[38] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.42.Une.autre.Terre.720p.x264.ac3.mp4'
++ read line
++ cpt_find=39
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.45.Le.jour.ou.la.Lune.mourut.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.45.Le.jour.ou.la.Lune.mourut.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.45.Le.jour.ou.la.Lune.mourut.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=863623276
+++ echo 'L Univers.et.ses.Mysteres.45.Le.jour.ou.la.Lune.mourut.720p.x264.ac3.mp4.863623276'
+++ md5sum
+++ awk '{print $1}'
++ md5sum=f6bf244762f723bfec8418093cba4f55
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''f6bf244762f723bfec8418093cba4f55'\'';'
++ md5sum_found=f6bf244762f723bfec8418093cba4f55
++ '[' -z f6bf244762f723bfec8418093cba4f55 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''f6bf244762f723bfec8418093cba4f55'\'';'
++ cpt_update=38
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[39] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.45.Le.jour.ou.la.Lune.mourut.720p.x264.ac3.mp4'
++ read line
++ cpt_find=40
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.41.Sexe.dans.l espace.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.41.Sexe.dans.l espace.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.41.Sexe.dans.l espace.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=532299727
+++ echo 'L Univers.et.ses.Mysteres.41.Sexe.dans.l espace.720p.x264.ac3.mp4.532299727'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=4adee0c358af5fd61ac6e7b7529c395e
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''4adee0c358af5fd61ac6e7b7529c395e'\'';'
++ md5sum_found=4adee0c358af5fd61ac6e7b7529c395e
++ '[' -z 4adee0c358af5fd61ac6e7b7529c395e ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''4adee0c358af5fd61ac6e7b7529c395e'\'';'
++ cpt_update=39
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[40] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.41.Sexe.dans.l espace.720p.x264.ac3.mp4'
++ read line
++ cpt_find=41
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.36.Cometes.et.asteroides.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.36.Cometes.et.asteroides.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.36.Cometes.et.asteroides.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=599396327
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.36.Cometes.et.asteroides.720p.x264.ac3.mp4.599396327'
++ md5sum=253127e37d893e1ad9241e93ddcd916c
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''253127e37d893e1ad9241e93ddcd916c'\'';'
++ md5sum_found=253127e37d893e1ad9241e93ddcd916c
++ '[' -z 253127e37d893e1ad9241e93ddcd916c ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''253127e37d893e1ad9241e93ddcd916c'\'';'
++ cpt_update=40
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[41] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.36.Cometes.et.asteroides.720p.x264.ac3.mp4'
++ read line
++ cpt_find=42
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.49.Dix.moyens.de.detruire.la.Terre.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.49.Dix.moyens.de.detruire.la.Terre.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.49.Dix.moyens.de.detruire.la.Terre.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=843452440
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.49.Dix.moyens.de.detruire.la.Terre.720p.x264.ac3.mp4.843452440'
++ md5sum=30b05aecac14b2c55de72fc0d86424b7
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''30b05aecac14b2c55de72fc0d86424b7'\'';'
++ md5sum_found=30b05aecac14b2c55de72fc0d86424b7
++ '[' -z 30b05aecac14b2c55de72fc0d86424b7 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''30b05aecac14b2c55de72fc0d86424b7'\'';'
++ cpt_update=41
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[42] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.49.Dix.moyens.de.detruire.la.Terre.720p.x264.ac3.mp4'
++ read line
++ cpt_find=43
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.01.Le.Soleil l etoile.mysterieuse.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.01.Le.Soleil l etoile.mysterieuse.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.01.Le.Soleil l etoile.mysterieuse.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=562686281
+++ echo 'L Univers.et.ses.Mysteres.01.Le.Soleil l etoile.mysterieuse.720p.x264.ac3.mp4.562686281'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=2cfe97442d00caac27bde5f331525952
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''2cfe97442d00caac27bde5f331525952'\'';'
++ md5sum_found=2cfe97442d00caac27bde5f331525952
++ '[' -z 2cfe97442d00caac27bde5f331525952 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''2cfe97442d00caac27bde5f331525952'\'';'
++ cpt_update=42
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[43] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.01.Le.Soleil l etoile.mysterieuse.720p.x264.ac3.mp4'
++ read line
++ cpt_find=44
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.18.Les.lunes.du.Systeme.Solaire.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.18.Les.lunes.du.Systeme.Solaire.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.18.Les.lunes.du.Systeme.Solaire.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=468459126
+++ echo 'L Univers.et.ses.Mysteres.18.Les.lunes.du.Systeme.Solaire.720p.x264.ac3.mp4.468459126'
++ md5sum=19a6ca1b3bcc090e2a93aaa6527f83cd
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''19a6ca1b3bcc090e2a93aaa6527f83cd'\'';'
++ md5sum_found=19a6ca1b3bcc090e2a93aaa6527f83cd
++ '[' -z 19a6ca1b3bcc090e2a93aaa6527f83cd ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''19a6ca1b3bcc090e2a93aaa6527f83cd'\'';'
++ cpt_update=43
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[44] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.18.Les.lunes.du.Systeme.Solaire.720p.x264.ac3.mp4'
++ read line
++ cpt_find=45
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.10.Vie.et.mort.d.une.etoile.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.10.Vie.et.mort.d.une.etoile.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.10.Vie.et.mort.d.une.etoile.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=426192271
+++ echo 'L Univers.et.ses.Mysteres.10.Vie.et.mort.d.une.etoile.720p.x264.ac3.mp4.426192271'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=82ecda0fdbebc7bb66dc4d2a61cca381
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''82ecda0fdbebc7bb66dc4d2a61cca381'\'';'
++ md5sum_found=82ecda0fdbebc7bb66dc4d2a61cca381
++ '[' -z 82ecda0fdbebc7bb66dc4d2a61cca381 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''82ecda0fdbebc7bb66dc4d2a61cca381'\'';'
++ cpt_update=44
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[45] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.10.Vie.et.mort.d.une.etoile.720p.x264.ac3.mp4'
++ read line
++ cpt_find=46
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.03.La.fin.de.la.Terre.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.03.La.fin.de.la.Terre.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.03.La.fin.de.la.Terre.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=519981386
+++ echo 'L Univers.et.ses.Mysteres.03.La.fin.de.la.Terre.720p.x264.ac3.mp4.519981386'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=f345c5b7e4cc5643ee3fd1ed265a5fbc
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''f345c5b7e4cc5643ee3fd1ed265a5fbc'\'';'
++ md5sum_found=f345c5b7e4cc5643ee3fd1ed265a5fbc
++ '[' -z f345c5b7e4cc5643ee3fd1ed265a5fbc ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''f345c5b7e4cc5643ee3fd1ed265a5fbc'\'';'
++ cpt_update=45
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[46] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.03.La.fin.de.la.Terre.720p.x264.ac3.mp4'
++ read line
++ cpt_find=47
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.43.Stopper.Armageddon.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.43.Stopper.Armageddon.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.43.Stopper.Armageddon.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=501762083
+++ awk '{print $1}'
+++ md5sum
+++ echo 'L Univers.et.ses.Mysteres.43.Stopper.Armageddon.720p.x264.ac3.mp4.501762083'
++ md5sum=98c72cd3ab4ae7b62a36805f252388b5
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''98c72cd3ab4ae7b62a36805f252388b5'\'';'
++ md5sum_found=98c72cd3ab4ae7b62a36805f252388b5
++ '[' -z 98c72cd3ab4ae7b62a36805f252388b5 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''98c72cd3ab4ae7b62a36805f252388b5'\'';'
++ cpt_update=46
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[47] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.43.Stopper.Armageddon.720p.x264.ac3.mp4'
++ read line
++ cpt_find=48
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.21.Voyage.dans.L Espace.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.21.Voyage.dans.L Espace.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.21.Voyage.dans.L Espace.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=429754091
+++ echo 'L Univers.et.ses.Mysteres.21.Voyage.dans.L Espace.720p.x264.ac3.mp4.429754091'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=6add90a728912a8a1cadd2776f2daad5
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''6add90a728912a8a1cadd2776f2daad5'\'';'
++ md5sum_found=6add90a728912a8a1cadd2776f2daad5
++ '[' -z 6add90a728912a8a1cadd2776f2daad5 ']'
++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'UPDATE filmotheque SET verifydate='\''2013-04-20 03:07:34'\'' WHERE md5sum='\''6add90a728912a8a1cadd2776f2daad5'\'';'
++ cpt_update=47
++ put_verbose_mode 'UPTDATE BDD'
++ '[' 1 -eq 1 ']'
++ echo '[48] -UPTDATE BDD- /media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.21.Voyage.dans.L Espace.720p.x264.ac3.mp4'
++ read line
++ cpt_find=49
+++ basename '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.47.Les.plus.grandes.explosions.720p.x264.ac3.mp4'
++ video_title='L Univers.et.ses.Mysteres.47.Les.plus.grandes.explosions.720p.x264.ac3.mp4'
+++ ls -l '/media/freebox/Disque dur/Téléchargements/univers/L Univers.et.ses.Mysteres.47.Les.plus.grandes.explosions.720p.x264.ac3.mp4'
+++ awk '{print $5}'
++ weight=891528900
+++ echo 'L Univers.et.ses.Mysteres.47.Les.plus.grandes.explosions.720p.x264.ac3.mp4.891528900'
+++ awk '{print $1}'
+++ md5sum
++ md5sum=fa7a5a21d800eb2b299cb378abb116c5
++ '[' bdd == bdd ']'
+++ mysql filmo --batch -u filmo -h 192.168.1.100 -pfilmo -N -e 'SELECT md5sum FROM filmotheque WHERE md5sum='\''fa7a5a21d800eb2b299cb378abb116c5'\'';'

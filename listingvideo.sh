@@ -72,10 +72,9 @@ display_files_error()
 	if [ "$display_error" == 'on' ]; then	
 		echo; echo '################# ERREUR SUR LES FICHIERS SUIVANTS ######################'; echo
 		longueur_tab=${#error_film[*]}
-		echo "eee>>>"${error_film[@]}		
 
 	if [ $longueur_tab -ne 0 ]; then
-		echo "/!\ - $longueur_tab ont ete trouvees : "; echo
+		echo "/!\ - $longueur_tab erreurs ont ete trouvees : "; echo
 	else echo "AUCUNE ERREUR TROUVEE."
 	fi	
 	
@@ -100,7 +99,6 @@ date_format_bdd=`date '+%Y-%m-%d %H:%M:%S'`
 
 while read line
 do
-	line=`echo $line|sed "s/'//g"` # <--- on supprime l'apostrophe du fichier
 	cpt_find=$(($cpt_find + 1))
         video_title=`basename "$line"`
         weight=`ls -l "$line" |awk '{print $5}'`
@@ -118,7 +116,7 @@ do
 			mysql $bdd_name --batch -u $bdd_user -h $bdd_host -p$bdd_password -N -e \
 			"INSERT INTO filmotheque VALUES \
 			('','$line','$video_path','$video_title','$purename','-','$clearname','$codec_video','$codec_audio','$resolution_video','$duration_video','$width','$container','$date_format_bdd','$date_format_bdd','$md5sum','NO','','-','0','-');"
-			if [ "$?" -ne 0 ]; then error_film[$cpt_test]="$line" && cpt_test=$(($cpt_test+1)); fi; echo ">-<->-<->-<$error_film[$cpt_test]"
+			if [ "$?" -ne 0 ]; then error_film[$cpt_test]="$line" && cpt_test=$(($cpt_test+1)); fi;
 			cpt_add=$(($cpt_add+1))
 			put_verbose_mode 'ADD BDD'
 		else 

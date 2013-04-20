@@ -137,4 +137,11 @@ time_script=$(($end_script-$start_script))
 # Ajout des logs
 echo "[$date_format] SYNCRO DONE ($time_script sec)- vidéos trouvées ($cpt_find), ajoutées ($cpt_add), mises à jour ($cpt_update), perdues ($cpt_lost)." >>$logfile
 
-echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'${error_film[*]}
+# TEST DEBUG ==============================================
+echo '################################ LA OU CA CLAQUE #################################################################'
+longueur_tab=${#error_film[*]}
+
+for ((i = 0; i < $longueur_tab; i += 1))
+do
+	echo ${error_film[i]}
+done

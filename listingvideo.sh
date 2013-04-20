@@ -63,6 +63,8 @@ put_verbose_mode()
 # test if the program are installed
 usefull_program 1
 
+cpt_test=0
+
 cpt_find=0
 cpt_add=0
 cpt_update=0
@@ -96,7 +98,7 @@ do
 			mysql $bdd_name --batch -u $bdd_user -h $bdd_host -p$bdd_password -N -e \
 			"INSERT INTO filmotheque VALUES \
 			("","$line","$video_path","$video_title","$purename","-","$clearname","$codec_video","$codec_audio","$resolution_video","$duration_video","$width","$container","$date_format_bdd","$date_format_bdd","$md5sum",'NO','','-','0','-');"
-			if [ "$?" -ne 0 ]; then echo "###### $line ##########"; exit; fi;
+			if [ "$?" -ne 0 ]; then error_film[$cpt_test]="$line" && cpt_test=$(($cpt_test+1)); fi;
 			cpt_add=$(($cpt_add+1))
 			put_verbose_mode 'ADD BDD'
 		else 
@@ -134,3 +136,5 @@ time_script=$(($end_script-$start_script))
 
 # Ajout des logs
 echo "[$date_format] SYNCRO DONE ($time_script sec)- vidéos trouvées ($cpt_find), ajoutées ($cpt_add), mises à jour ($cpt_update), perdues ($cpt_lost)." >>$logfile
+
+echo '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>'${error_film[*]}

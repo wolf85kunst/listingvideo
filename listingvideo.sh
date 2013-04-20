@@ -30,10 +30,13 @@ get_secondes_duration()
 	hours=`echo $1| cut -d':' -f1 |sed -E 's/^0//'`
 	minutes=`echo $1| cut -d':' -f2 |sed -E 's/^0//'`
 	secondes=`echo $1| cut -d':' -f3 |sed -E 's/^0//'`
-	
-	hours=$(( $hours * 60 * 60 ))
-	minutes=$(( $minutes * 60 )) 
-	secondes=$(( $secondes + $minutes + $hours )) 
+	if [ -z $hours ]; then 
+		secondes='0';
+	else
+		hours=$(( $hours * 60 * 60 ))
+		minutes=$(( $minutes * 60 )) 
+		secondes=$(( $secondes + $minutes + $hours )) 
+	fi
 }
 
 get_info_video()

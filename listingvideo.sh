@@ -59,7 +59,7 @@ get_info_video()
 
 put_verbose_mode()
 {	
-	# enable if the first parameter is to 1
+	# enable if 'verbose_mode' in 'param.com' is to '1'
 	# give the information to user on shell of the action of the script on a file
 	if [ $verbose_mode -eq 1 ]; then 
 		enable_full_path='off'
